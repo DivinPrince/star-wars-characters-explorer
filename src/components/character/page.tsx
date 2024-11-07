@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import { useGetCharacter } from "@/hooks/api/use-get-character";
 import { CharacterPageDetails } from "./page-details";
 import PageTitle from "../page-title";
+import { useEffect } from "react";
 
 /**
  * CharacterPage component displays detailed information about a Star Wars character.

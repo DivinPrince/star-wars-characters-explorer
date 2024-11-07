@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet, ScrollRestoration } from "react-router-dom";
 import { NuqsAdapter } from "nuqs/adapters/react-router";
 
 import StarWarsExplorer from "./components/star-wars-explorer";
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <div 
-          className="flex flex-col items-center gap-2 py-4 sticky top-0 backdrop-blur-sm bg-background/30 z-50 cursor-pointer" 
+          className="flex flex-col items-center gap-2 py-4 sticky top-0 select-none backdrop-blur-sm bg-background/30 z-50 cursor-pointer" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <h1 className="font-star-wars text-4xl text-center font-medium text-primary">
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
           <h2 className="font-orbitron text-xl font-medium text-muted-foreground">Characters Explorer</h2>
         </div>
         <Outlet />
+        <ScrollRestoration />
       </>
     ),
     children: [

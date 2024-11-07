@@ -21,7 +21,7 @@ export const CharacterCardSkeleton = () => {
   return (
     <div className="w-full rounded-xl shadow-lg bg-card border border-border overflow-hidden">
       <div className="relative">
-        <Skeleton className="w-full h-56" />
+        <Skeleton className="w-full h-80" />
         <div className="absolute bottom-0 left-0 right-0 bg-background/95 p-4">
           <Skeleton className="h-8 w-3/4 mb-2" />
           <Skeleton className="h-4 w-1/2" />
@@ -61,9 +61,8 @@ export const CharacterCardSkeletonList = ({ count = 1 }: { count?: number }) => 
  * @param {Character} [props.character] - Character data to display
  */
 export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
-  // Show skeleton while loading
   if (!character) {
-    return <CharacterCardSkeleton />;
+    return null;
   }
 
   // Extract character ID from URL for image lookup and navigation
@@ -92,7 +91,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
         <img
           src={`/img/people/${characterId}.jpg`}
           alt={character.name}
-          className="w-full h-56 object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-80 object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 via-background/80 to-transparent p-4">
             <h3 className="text-2xl font-bold text-primary drop-shadow-lg group-hover:text-primary/90 transition-colors">

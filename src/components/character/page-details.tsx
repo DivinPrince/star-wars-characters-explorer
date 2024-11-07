@@ -76,7 +76,7 @@ export const CharacterPageDetails = ({
       <CardWithGradient className="shadow-lg animate-in slide-in-from-bottom-10 duration-300">
         <div className="relative space-y-6">
           {/* Character Profile */}
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center gap-8">
             <img
               src={`/img/people/${characterId}.jpg`}
               alt={character.name}
@@ -85,20 +85,20 @@ export const CharacterPageDetails = ({
             <div>
               <h1 className="font-orbitron text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary-foreground">{character.name}</h1>
               <p className="text-xl text-muted-foreground mt-2 font-semibold">
-                From {character.homeworld_details.name}
+                Homeworld: {character.homeworld_details.name}
               </p>
             </div>
           </div>
 
           {/* Character Attributes Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {characterAttributes.map(({ label, value }) => (
               <div
                 key={label}
-                className="bg-secondary/40 p-6 rounded-xl"
+                className="bg-secondary/40 p-4 sm:p-6 rounded-xl"
               >
-                <p className="text-muted-foreground text-sm mb-2 font-medium">{label}</p>
-                <p className="font-bold text-lg capitalize">{value}</p>
+                <p className="text-muted-foreground text-sm mb-1 sm:mb-2 font-medium">{label}</p>
+                <p className="font-bold text-base sm:text-lg capitalize">{value}</p>
               </div>
             ))}
           </div>
