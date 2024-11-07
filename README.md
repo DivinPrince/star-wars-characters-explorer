@@ -32,7 +32,7 @@ A React application that allows users to explore characters from the Star Wars u
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/DivinPrince/star-wars-characters-explorer.git star-wars-character-explorer
 cd star-wars-character-explorer
 ```
 
