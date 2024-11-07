@@ -7,6 +7,9 @@ body,html,:root{
 .font-orbitron{
   font-family: 'Orbitron', sans-serif;
 }
+.font-star-wars{
+  font-family: 'Star Wars', sans-serif;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

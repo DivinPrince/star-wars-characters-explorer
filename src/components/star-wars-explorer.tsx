@@ -5,6 +5,7 @@ import { useGetCharacters } from "@/hooks/api/use-get-characters";
 import CharactersList from "@/components/character/characters-list";
 import CharacterSearch from "@/components/character/search";
 import { CharacterCardSkeletonList } from "@/components/character/card";
+import PageTitle from "./page-title";
 
 /**
  * StarWarsExplorer component provides the main interface for exploring Star Wars characters.
@@ -60,6 +61,7 @@ export default function StarWarsExplorer() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 relative" id="#">
+      <PageTitle title="Star Wars Characters Explorer" />
       <CharacterSearch />
       {/* Loading state */}
       {isLoading && (

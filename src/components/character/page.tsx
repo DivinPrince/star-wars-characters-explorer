@@ -3,6 +3,7 @@ import { Loader2 } from "lucide-react";
 
 import { useGetCharacter } from "@/hooks/api/use-get-character";
 import { CharacterPageDetails } from "./page-details";
+import PageTitle from "../page-title";
 
 /**
  * CharacterPage component displays detailed information about a Star Wars character.
@@ -33,6 +34,13 @@ export const CharacterPage = () => {
     isLoading: isLoadingCharacter 
   } = useGetCharacter(id);
 
+  if(!character && !isLoadingCharacter) {
+    return (
+      <div className="text-center text-muted-foreground">
+        Character not found
+      </div>
+    );
+  }
   /**
    * Handles navigation back to the character list page
    */
@@ -41,6 +49,7 @@ export const CharacterPage = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       {/* Return navigation button */}
+      <PageTitle title={`Star Wars Character | ${character?.name}`} />
       <button
         onClick={handleReturn}
         className="mb-6 inline-flex items-center px-6 py-3 text-sm font-bold bg-secondary rounded-full hover:bg-secondary/90 transition-colors duration-300 border"

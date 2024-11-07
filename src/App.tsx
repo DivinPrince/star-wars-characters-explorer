@@ -14,13 +14,10 @@ const router = createBrowserRouter([
           className="flex flex-col items-center gap-2 py-4 sticky top-0 backdrop-blur-sm bg-background/30 z-50 cursor-pointer" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <img
-            id="local-nav-logo-desktop"
-            src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254"
-            alt="Star Wars Logo"
-            className="h-16"
-          />
-          <h1 className="font-orbitron text-xl font-medium text-muted-foreground">Characters Explorer</h1>
+          <h1 className="font-star-wars text-4xl text-center font-medium text-primary">
+            Star<br/>Wars
+          </h1>
+          <h2 className="font-orbitron text-xl font-medium text-muted-foreground">Characters Explorer</h2>
         </div>
         <Outlet />
       </>
